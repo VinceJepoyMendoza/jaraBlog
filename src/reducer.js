@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const Reducer = (state, action) => {
-  const url = `https://jarablog.herokuapp.com/`
+  const url = `https://jarablog.herokuapp.com`
   // Retrieving token from local storage
   const token = localStorage.getItem('jaraToken')
   const authAxios = axios.create({
