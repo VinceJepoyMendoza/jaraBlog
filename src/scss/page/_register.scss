@@ -1,0 +1,59 @@
+.register-img {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  object-fit: cover;
+  @include posCenter;
+}
+
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 80%;
+  @include flexRow;
+
+  aside {
+    display: none;
+    line-height: 1.4;
+    padding-right: 2rem;
+    span {
+      color: $primary;
+    }
+  }
+
+  h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  form {
+    width: 100%;
+    padding: 2rem;
+    background: rgba($clr-pink-2, 0.65);
+    @include border-radius-md;
+    @include shadow-sm;
+    @include flexColumn;
+
+    input {
+      font-size: $fontSize-md;
+      padding: 1rem 1.35rem;
+      @include primary-input;
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .register {
+    aside {
+      width: 100%;
+      display: block;
+    }
+
+    form {
+      width: 60%;
+    }
+  }
+}

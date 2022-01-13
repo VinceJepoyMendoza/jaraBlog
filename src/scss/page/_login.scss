@@ -1,0 +1,62 @@
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+
+  &-content {
+    display: flex;
+    @include shadow-md;
+
+    form {
+      background: $clr-pink-3;
+      padding: 2rem;
+      width: 100%;
+      @include flexColumn;
+
+      input {
+        font-size: 1rem;
+        padding: 1.15rem 0.75rem;
+        @include primary-input;
+        @include primary-input-focus;
+      }
+
+      & > small {
+        margin-top: 1rem;
+        text-align: center;
+      }
+    }
+
+    img {
+      width: 65%;
+      background: $clr-pink-4;
+      padding: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: $xl) {
+  .login {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .login {
+    width: 80%;
+    &-content {
+      flex-direction: column;
+
+      form {
+        & > small {
+          margin-top: 0.5rem;
+        }
+      }
+
+      img {
+        display: none;
+      }
+    }
+  }
+}

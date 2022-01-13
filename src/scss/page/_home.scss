@@ -1,0 +1,122 @@
+.home {
+  header {
+    padding: 1rem 0;
+    justify-content: space-evenly;
+    @include flexRow;
+  }
+
+  // Form
+  &-form {
+    z-index: 10;
+    position: fixed;
+    color: #fff;
+    padding: 2rem;
+    width: 90%;
+    @include border-radius-md;
+    @include posCenter;
+    @include bgPrimary;
+    @include flexColumn;
+
+    h2 {
+      text-align: center;
+    }
+
+    &-split {
+      justify-content: space-between;
+      @include flexRow;
+      label {
+        width: 100%;
+      }
+    }
+
+    form {
+      @include flexColumn;
+      input,
+      textarea {
+        padding: 0.75rem;
+        font-size: $fontSize-md;
+        @include primary-input;
+      }
+
+      textarea {
+        resize: none;
+        height: 15vh;
+        @include customScrollbar;
+      }
+
+      input[type='submit'] {
+        &:hover {
+          border: 2px solid #fff;
+          color: #fff;
+          @include bgPrimary;
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 1000px;
+  }
+}
+
+// Post
+.home-posts {
+  &-item {
+    background: $clr-pink-3;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+    position: relative;
+    @include flexColumn;
+
+    // Left bar
+    @include leftBar;
+
+    a {
+      color: #000;
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &-header {
+      @include flexRow;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      color: $secondary;
+      font-weight: 500;
+      font-size: $fontSize-ml;
+      padding-right: 3.5rem !important;
+    }
+
+    &-second {
+      color: gray;
+      @include flexRow;
+      small.badge {
+        @include private-badge;
+      }
+
+      a {
+        color: gray;
+      }
+    }
+
+    &-creator {
+      font-size: $fontSize-sm;
+    }
+
+    &-tag {
+      margin-top: 0.75rem;
+      @include post-tags;
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .home {
+    &-form {
+      width: 60%;
+    }
+  }
+}

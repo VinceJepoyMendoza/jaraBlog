@@ -1,0 +1,48 @@
+.user-page {
+  h2,
+  h3 {
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    padding-bottom: 0;
+  }
+
+  // User's info
+  &-info {
+    width: 100%;
+    background: rgba($clr-pink-4, 0.9);
+    padding: 1rem;
+    @include border-radius-sm;
+    @include shadow-sm;
+
+    table {
+      td {
+        padding: 0.5rem;
+        &.value {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  // Post with see more button
+  &-seeMore {
+    padding: 2rem 0;
+    article {
+      background: rgba($clr-pink-4, 0.9);
+      @include shadow-sm;
+    }
+  }
+
+  // Background image
+  &-img {
+    position: fixed;
+    width: 50%;
+    z-index: -1;
+    @include posCenter;
+  }
+}

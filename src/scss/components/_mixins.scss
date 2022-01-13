@@ -1,0 +1,143 @@
+// Flex box
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@mixin flexRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@mixin transition-prop {
+  transition: all 0.3s ease-in-out;
+}
+
+// Shadows
+@mixin shadow-sm {
+  box-shadow: 5px 5px 10px 0 rgba(#000, 0.15);
+}
+
+@mixin shadow-md {
+  box-shadow: 8px 8px 12px 0 rgba(#000, 0.15);
+}
+
+@mixin shadow-lg {
+  box-shadow: 13px 13px 15px 0 rgba(#000, 0.15);
+}
+
+// Border radius
+@mixin border-radius-sm {
+  border-radius: 5px;
+}
+
+@mixin border-radius-md {
+  border-radius: 10px;
+}
+
+@mixin border-radius-lg {
+  border-radius: 20px;
+}
+
+// Position to center
+@mixin posCenter {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Inputs
+@mixin primary-input {
+  width: 100%;
+  border: none;
+  background: rgba($clr-pink-4, 0.9);
+  outline: none;
+  @include primary-input-focus;
+}
+
+@mixin primary-input-focus {
+  border: 2px solid transparent;
+  @include transition-prop;
+
+  &:hover,
+  &:focus {
+    border: 2px solid $primary;
+    color: $primary;
+
+    &::placeholder {
+      color: $primary;
+    }
+  }
+}
+
+@mixin primary-hover {
+  @include transition-prop;
+  color: $primary;
+  background: $secondary;
+}
+
+@mixin secondary-hover {
+  @include transition-prop;
+  color: $secondary;
+  background: $primary;
+  border: 2px solid transparent;
+}
+
+// Slightly transparent primary bg
+@mixin bgPrimary {
+  background: rgba($primary, 0.8);
+}
+
+// Custom scrollbar
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 10px;
+
+    &-thumb {
+      background: $clr-pink-2;
+      @include border-radius-sm;
+    }
+
+    &-track {
+      background: $clr-pink-3;
+    }
+  }
+}
+
+// Post's left bar
+@mixin leftBar {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1%;
+    height: 100%;
+    background: $secondary;
+  }
+}
+
+// Private badhe
+@mixin private-badge {
+  background: $secondary;
+  padding: 5px 7px;
+  color: #fff;
+  font-size: 12px;
+  @include border-radius-sm;
+}
+
+// Tags
+@mixin post-tags {
+  font-size: 1.1rem;
+
+  small {
+    margin: 0.15rem;
+    display: inline-block;
+    padding: 3px 5px;
+    color: #fff;
+    background: $primary;
+    @include border-radius-sm;
+  }
+}

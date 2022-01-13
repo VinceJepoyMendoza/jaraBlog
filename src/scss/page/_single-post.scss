@@ -1,0 +1,41 @@
+.single-post {
+  &-content {
+    position: relative;
+    background: $clr-pink-3;
+    margin: 2rem 0;
+    padding: 2rem;
+    @include leftBar;
+    @include shadow-md;
+    @include flexColumn;
+    @include border-radius-md;
+
+    &::before {
+      border-radius: 10px 0 0 10px;
+    }
+
+    header {
+      span {
+        @include flexRow;
+
+        p {
+          font-size: $fontSize-sm;
+          color: #fff;
+          padding: 0.35rem 0.45rem;
+          @include border-radius-md;
+        }
+      }
+
+      a {
+        color: $secondary;
+        @include transition-prop;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    &-tags {
+      @include post-tags;
+    }
+  }
+}

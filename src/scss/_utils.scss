@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+// font-family: 'Quicksand', sans-serif; main fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+// font-family: 'Poppins', sans-serif; Headings
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.2;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: $fontSize-sm;
+  background: $clr-pink-5;
+}
+
+a {
+  text-decoration: none;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  // padding-bottom: 44.88px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.45rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  // overflow: hidden;
+}
+
+@media screen and (min-width: $md) {
+  body {
+    line-height: 1.1;
+    font-size: $fontSize-md;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+  }
+
+  h2 {
+    font-size: 2.35rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.35rem;
+  }
+}
+
+// Error alerts
+.popup-alert {
+  padding: 0.5rem;
+  color: #fff;
+}
+
+.popup-danger {
+  background: $clr-red-1;
+}
+
+.popup-success {
+  background: $clr-green-1;
+}
+
+// Loader
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+}

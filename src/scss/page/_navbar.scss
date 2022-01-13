@@ -1,0 +1,20 @@
+nav.main-nav {
+  background: $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  a {
+    color: #fff !important;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    a {
+      font-weight: 300;
+      font-size: 1.2rem;
+    }
+  }
+}

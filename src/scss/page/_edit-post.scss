@@ -1,0 +1,78 @@
+.edit-post {
+  width: 86%;
+  position: absolute;
+  @include posCenter;
+
+  &-content {
+    padding: 1rem 1.5rem;
+    background: $primary;
+    @include flexColumn;
+    @include leftBar;
+
+    h3 {
+      color: #fff;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    input,
+    button,
+    textarea {
+      font-size: $fontSize-md;
+      padding: 0.75rem;
+      @include primary-input;
+    }
+
+    label small {
+      color: #fff;
+    }
+
+    .edit-post-content-tags {
+      @include flexRow;
+
+      label {
+        width: 100%;
+      }
+
+      button {
+        width: 30%;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 35vh;
+      @include customScrollbar;
+    }
+
+    &-edit {
+      position: relative;
+      &:hover svg {
+        color: $primary;
+      }
+      svg {
+        position: absolute;
+        top: 55%;
+        right: 25%;
+        transform: translate(-25%, -55%);
+        @include transition-prop;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $lg) {
+  .edit-post {
+    width: 75%;
+
+    &-content {
+      &-tags label {
+        width: 100%;
+      }
+      &-edit svg {
+        right: 40%;
+        transform: translateY(-40%);
+      }
+    }
+  }
+}

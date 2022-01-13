@@ -1,0 +1,39 @@
+.welcome {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  padding: 2rem 0;
+  width: 90%;
+  text-align: center;
+
+  h1 {
+    font-weight: 500;
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+    color: $primary;
+
+    span {
+      color: #fff;
+    }
+  }
+
+  &-buttons {
+    padding: 1rem;
+    @include flexColumn;
+  }
+
+  &-img {
+    position: absolute;
+    width: 60%;
+    max-height: 70vh;
+    // opacity: 0.75;
+    @include posCenter;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .welcome {
+    width: 75%;
+  }
+}

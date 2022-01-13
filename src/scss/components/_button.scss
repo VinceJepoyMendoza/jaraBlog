@@ -1,0 +1,184 @@
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  @include primary-input-focus;
+
+  &:hover {
+    color: $secondary;
+  }
+
+  // Post options btn's buttons
+  &-post-options {
+    position: absolute;
+    top: inherit;
+    right: 2rem;
+
+    // Edit and Delete button
+    & > div {
+      background: $clr-pink-4;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translate(-50%, 20px);
+      padding: 0.25rem;
+      @include flexRow;
+      gap: 0.25rem;
+      @include transition-prop;
+
+      // Arrow up
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%, -10px);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid $clr-pink-4;
+        border-right: 10px solid transparent;
+      }
+    }
+  }
+
+  // Post's option button
+  &-option {
+    background: transparent;
+    font-size: 2rem;
+    @include transition-prop;
+
+    &:hover,
+    &:focus {
+      color: $secondary;
+      border: 2px solid transparent;
+      transform: rotate(1turn);
+    }
+  }
+
+  // User page's see more button
+  &-see-more {
+    display: block;
+    margin: 0 auto;
+    background: $primary;
+    padding: 0.45rem;
+    color: #fff !important;
+    font-size: $fontSize-md;
+    @include border-radius-sm;
+  }
+
+  &-welcome {
+    background: rgba(#fff, 0.85);
+    width: 60%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: $primary;
+    font-size: $fontSize-sm;
+    @include transition-prop;
+
+    &:hover {
+      background: rgba($primary, 0.6);
+      color: #fff;
+      border: 2px solid #fff;
+    }
+  }
+
+  &-scrollTop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 20;
+    border-radius: 50%;
+    background: transparent;
+    transform: translateX(calc(100% + 1rem));
+
+    svg {
+      @include transition-prop;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      color: $primary;
+      background: #fff;
+    }
+
+    &:hover,
+    &:focus {
+      border: 2px solid transparent;
+      svg {
+        background: $primary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.btn-post-form {
+  @include primary-input;
+  width: 35%;
+  padding: 0.75rem;
+  font-size: $fontSize-md;
+
+  &:hover {
+    @include secondary-hover;
+  }
+}
+
+// Home posts
+.btn-post {
+  background: transparent;
+  font-size: $fontSize-ml;
+
+  &:hover {
+    border-color: transparent;
+  }
+
+  &-modal {
+    padding: 0.25rem 0.75rem;
+    background: $clr-pink-5;
+    color: $primary;
+    border: 2px solid $primary;
+    font-size: $fontSize-md;
+    @include border-radius-md;
+    @include flexRow;
+
+    &:hover {
+      @include secondary-hover;
+      color: #fff;
+    }
+
+    svg {
+      font-size: $fontSize-ml;
+    }
+  }
+
+  &-edit svg,
+  &-delete {
+    color: $secondary;
+    @include transition-prop;
+  }
+
+  &-edit svg:hover {
+    color: $clr-green-2;
+  }
+
+  &-delete:hover {
+    color: $clr-red-1;
+  }
+
+  &-readmore {
+    display: inline-block;
+    background: #ff0;
+  }
+}
+
+@media screen and (min-width: $md) {
+  .btn-post-form {
+    width: 20%;
+  }
+  .btn {
+    &-welcome {
+      font-size: 1.15rem;
+    }
+  }
+}

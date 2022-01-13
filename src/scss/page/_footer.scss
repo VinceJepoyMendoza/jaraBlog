@@ -1,0 +1,21 @@
+#main-footer {
+  background: $primary;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.25rem 0;
+  text-align: center;
+
+  a {
+    color: $secondary;
+    @include transition-prop;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  h4 {
+    font-size: $fontSize-md;
+    color: #fff;
+  }
+}
