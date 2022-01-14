@@ -70,7 +70,7 @@ const User = () => {
         <div className='user-page-seeMore'>
           {seeMore ? nonCollapse : collapse}
           {/* Only show collapse button if user's post are more than two */}
-          {userAllPosts.length >= 2 && (
+          {userAllPosts.length > 2 && (
             <button
               type='button'
               title='See more posts'
